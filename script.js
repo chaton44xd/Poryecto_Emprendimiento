@@ -77,7 +77,6 @@ img.addEventListener('click', function() {
     this.classList.toggle('zoom'); // Agrega o quita la clase 'zoom' al hacer clic
 });
 
-
 document.getElementById("quiz-form").addEventListener("submit", function (event) {
     event.preventDefault(); // Evita que el formulario se envíe
 
