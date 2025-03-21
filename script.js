@@ -76,3 +76,33 @@ const img = document.getElementById('timeline-img');
 img.addEventListener('click', function() {
     this.classList.toggle('zoom'); // Agrega o quita la clase 'zoom' al hacer clic
 });
+
+
+document.getElementById("quiz-form").addEventListener("submit", function (event) {
+    event.preventDefault(); // Evita que el formulario se envíe
+
+    // Respuestas correctas (personaliza según tus necesidades)
+    const respuestasCorrectas = {
+        "act1-q1": "División del trabajo, autoridad, disciplina, unidad de mando, unidad de dirección, subordinación del interés individual al general, remuneración, centralización, jerarquía, orden, equidad, estabilidad del personal, iniciativa, espíritu de equipo.",
+        "act1-q2": "Los principios de Fayol proporcionan una estructura clara para la organización, mejorando la eficiencia y la coordinación.",
+        // Agrega más respuestas correctas aquí
+    };
+
+    let puntajeTotal = 0;
+    let resultadosHTML = "<h3>Resultados:</h3>";
+
+    // Evaluar respuestas
+    for (const [pregunta, respuestaCorrecta] of Object.entries(respuestasCorrectas)) {
+        const respuestaUsuario = document.querySelector(`textarea[name="${pregunta}"]`).value.trim().toLowerCase();
+        if (respuestaUsuario === respuestaCorrecta.toLowerCase()) {
+            puntajeTotal += 1;
+            resultadosHTML += `<p>✅ ${pregunta}: Correcto</p>`;
+        } else {
+            resultadosHTML += `<p>❌ ${pregunta}: Incorrecto. La respuesta correcta es: ${respuestaCorrecta}</p>`;
+        }
+    }
+
+    // Mostrar resultados
+    const resultadosDiv = document.getElementById("resultados");
+    resultadosDiv.innerHTML = resultadosHTML + `<p><strong>Puntaje Total: ${puntajeTotal} / ${Object.keys(respuestasCorrectas).length}</strong></p>`;
+});
