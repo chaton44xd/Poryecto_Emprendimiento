@@ -82,9 +82,16 @@ document.getElementById("quiz-form").addEventListener("submit", function (event)
 
     // Respuestas correctas (personaliza según tus necesidades)
     const respuestasCorrectas = {
-        "act1-q1": ["A", "B", "C", "D", "E"], // Ejemplo: Respuestas correctas para act1-q1
-        "act1-q2": ["A"], // Ejemplo: Respuesta correcta para act1-q2
-        // Agrega más respuestas correctas aquí
+        "act1-q1": ["A", "B", "C", "D", "E"], // Respuestas correctas para act1-q1
+        "act1-q2": ["A"], // Respuesta correcta para act1-q2
+        "act2-q1": ["A", "B", "C", "D"], // Respuestas correctas para act2-q1
+        "act2-q2": ["A", "B", "C"], // Respuestas correctas para act2-q2
+        "act3-q1": ["A", "B", "C", "D"], // Respuestas correctas para act3-q1
+        "act3-q2": ["A", "B", "C"], // Respuestas correctas para act3-q2
+        "act4-q1": ["A", "B", "C", "D"], // Respuestas correctas para act4-q1
+        "act4-q2": ["A", "B", "C", "D"], // Respuestas correctas para act4-q2
+        "act5-q1": ["A", "B", "C", "D"], // Respuestas correctas para act5-q1
+        "act5-q2": ["A", "B", "C", "D"] // Respuestas correctas para act5-q2
     };
 
     let puntajeTotal = 0;
@@ -92,8 +99,13 @@ document.getElementById("quiz-form").addEventListener("submit", function (event)
 
     // Evaluar respuestas
     for (const [pregunta, respuestas] of Object.entries(respuestasCorrectas)) {
-        const opcionesSeleccionadas = Array.from(document.querySelectorAll(`input[name="${pregunta}"]:checked`)).map(input => input.value);
-        const esCorrecta = opcionesSeleccionadas.length === respuestas.length && opcionesSeleccionadas.every(val => respuestas.includes(val));
+        // Obtener las respuestas seleccionadas por el usuario
+        const opcionesSeleccionadas = Array.from(document.querySelectorAll(`input[name="${pregunta}"]:checked`))
+            .map(input => input.value);
+
+        // Verificar si las respuestas seleccionadas coinciden con las respuestas correctas
+        const esCorrecta = opcionesSeleccionadas.length === respuestas.length && 
+                            opcionesSeleccionadas.every(val => respuestas.includes(val));
 
         if (esCorrecta) {
             puntajeTotal += 1;

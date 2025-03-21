@@ -409,10 +409,9 @@ video {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-#cuestionario h3 {
-    margin-top: 20px;
+#cuestionario h2, #cuestionario h3 {
+    text-align: center;
     color: #333;
-    font-size: 1.5em;
 }
 
 .question {
@@ -430,6 +429,7 @@ video {
     font-size: 1em;
 }
 
+/* Estilos del botón */
 #quiz-form button {
     display: block;
     margin: 20px auto;
@@ -440,12 +440,14 @@ video {
     border-radius: 5px;
     font-size: 1em;
     cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
 #quiz-form button:hover {
     background-color: #0056b3;
 }
 
+/* Resultados */
 #resultados {
     margin-top: 20px;
     padding: 20px;
@@ -454,3 +456,20 @@ video {
     font-size: 1.1em;
     color: #333;
 }
+
+/* Media Query para dispositivos móviles */
+@media (max-width: 768px) {
+    #cuestionario {
+        padding: 15px;
+    }
+
+    #quiz-form button {
+        width: 100%;
+        padding: 12px;
+    }
+
+    .question p {
+        font-size: 1.2em;
+    }
+}
+
