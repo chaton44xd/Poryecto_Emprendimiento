@@ -405,12 +405,12 @@ video {
     margin-top: 40px;
     padding: 20px;
     background-color: #000000;    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgb(0, 0, 0);
 }
 
 #cuestionario h2, #cuestionario h3 {
     text-align: center;
-    color: #333;
+    color: #000000;
 }
 
 .question {
@@ -425,6 +425,7 @@ video {
 .question label {
     display: block;
     margin: 5px 0;
+    
     font-size: 1em;
 }
 
