@@ -400,7 +400,6 @@ video {
 }
 
 
-
 /* Estilos para el cuestionario */
 #cuestionario {
     margin-top: 40px;
@@ -425,13 +424,10 @@ video {
     margin-bottom: 10px;
 }
 
-.question textarea {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+.question label {
+    display: block;
+    margin: 5px 0;
     font-size: 1em;
-    resize: vertical;
 }
 
 #quiz-form button {

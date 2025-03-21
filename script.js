@@ -83,8 +83,8 @@ document.getElementById("quiz-form").addEventListener("submit", function (event)
 
     // Respuestas correctas (personaliza según tus necesidades)
     const respuestasCorrectas = {
-        "act1-q1": "División del trabajo, autoridad, disciplina, unidad de mando, unidad de dirección, subordinación del interés individual al general, remuneración, centralización, jerarquía, orden, equidad, estabilidad del personal, iniciativa, espíritu de equipo.",
-        "act1-q2": "Los principios de Fayol proporcionan una estructura clara para la organización, mejorando la eficiencia y la coordinación.",
+        "act1-q1": ["A", "B", "C", "D", "E"], // Ejemplo: Respuestas correctas para act1-q1
+        "act1-q2": ["A"], // Ejemplo: Respuesta correcta para act1-q2
         // Agrega más respuestas correctas aquí
     };
 
@@ -92,13 +92,15 @@ document.getElementById("quiz-form").addEventListener("submit", function (event)
     let resultadosHTML = "<h3>Resultados:</h3>";
 
     // Evaluar respuestas
-    for (const [pregunta, respuestaCorrecta] of Object.entries(respuestasCorrectas)) {
-        const respuestaUsuario = document.querySelector(`textarea[name="${pregunta}"]`).value.trim().toLowerCase();
-        if (respuestaUsuario === respuestaCorrecta.toLowerCase()) {
+    for (const [pregunta, respuestas] of Object.entries(respuestasCorrectas)) {
+        const opcionesSeleccionadas = Array.from(document.querySelectorAll(`input[name="${pregunta}"]:checked`)).map(input => input.value);
+        const esCorrecta = opcionesSeleccionadas.length === respuestas.length && opcionesSeleccionadas.every(val => respuestas.includes(val));
+
+        if (esCorrecta) {
             puntajeTotal += 1;
             resultadosHTML += `<p>✅ ${pregunta}: Correcto</p>`;
         } else {
-            resultadosHTML += `<p>❌ ${pregunta}: Incorrecto. La respuesta correcta es: ${respuestaCorrecta}</p>`;
+            resultadosHTML += `<p>❌ ${pregunta}: Incorrecto. Las respuestas correctas son: ${respuestas.join(", ")}</p>`;
         }
     }
 
