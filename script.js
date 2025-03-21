@@ -82,16 +82,16 @@ document.getElementById("quiz-form").addEventListener("submit", function (event)
 
     // Respuestas correctas (personaliza según tus necesidades)
     const respuestasCorrectas = {
-        "act1-q1": ["A", "B", "C", "D", "E"], // Respuestas correctas para act1-q1
-        "act1-q2": ["A"], // Respuesta correcta para act1-q2
-        "act2-q1": ["A", "B", "C", "D"], // Respuestas correctas para act2-q1
-        "act2-q2": ["A", "B", "C"], // Respuestas correctas para act2-q2
-        "act3-q1": ["A", "B", "C", "D"], // Respuestas correctas para act3-q1
-        "act3-q2": ["A", "B", "C"], // Respuestas correctas para act3-q2
-        "act4-q1": ["A", "B", "C", "D"], // Respuestas correctas para act4-q1
-        "act4-q2": ["A", "B", "C", "D"], // Respuestas correctas para act4-q2
-        "act5-q1": ["A", "B", "C", "D"], // Respuestas correctas para act5-q1
-        "act5-q2": ["A", "B", "C", "D"] // Respuestas correctas para act5-q2
+        "actividad 1-pregunta 1": ["A", "B", "C", "D", "E"], // Respuestas correctas para act1-q1
+        "actividad 1-pregunta 2": ["A"], // Respuesta correcta para act1-q2
+        "actividad 2-pregunta 1": ["A", "B", "C", "D"], // Respuestas correctas para act2-q1
+        "actividad 2-pregunta 2": ["A", "B", "C"], // Respuestas correctas para act2-q2
+        "actividad 3-pregunta 1": ["A", "B", "C", "D"], // Respuestas correctas para act3-q1
+        "actividad 3-pregunta 2": ["A", "B", "C"], // Respuestas correctas para act3-q2
+        "actividad 4-pregunta 1": ["A", "B", "C", "D"], // Respuestas correctas para act4-q1
+        "actividad 4-pregunta 2": ["A", "B", "C", "D"], // Respuestas correctas para act4-q2
+        "actividad 5-pregunta 1": ["A", "B", "C", "D"], // Respuestas correctas para act5-q1
+        "actividad 5-pregunta 2": ["A", "B", "C", "D"] // Respuestas correctas para act5-q2
     };
 
     let puntajeTotal = 0;
